@@ -15,6 +15,6 @@ function popupValue() {
 
 // 要素に値をセットする
 function setValue() {
-    const text2Value = 'R@kus!';
+    const text2Value = 'Rkus!';
 
 }
