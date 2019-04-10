@@ -10,6 +10,6 @@ module.exports = function (socket) {
         console.log('退室：' + data);
 
         // 全クライアントが受信するメッセージ表示イベント（receiveMessageEvent）を送信する
-        // io.sockets.emit('receiveExitEvent', data);
+        socket.broadcast.emit('receiveExitEvent', data);
     });
 };
