@@ -5,7 +5,9 @@
 	    // 入力されたユーザ名を取得する
 	    const userName = '';
 	    // ユーザ名が未入力でないかチェックする
+			const userName = $('userName').text('');
+			if (userName !== ''){
+				$('form').submit();
+			}
 
-
-	    $('form').submit();
 	}
