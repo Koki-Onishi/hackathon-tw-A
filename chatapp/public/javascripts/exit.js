@@ -3,8 +3,13 @@
 // 退室メッセージをサーバに送信する
 function exit() {
     // ユーザ名取得
-    const userName = '';
+    const userName = $("#userName").val();
+
+    // const data = userName
+    const data = 'オレ'
+
     // 退室メッセージイベントを送信する
+    socket.emit('sendExitEvent', data);
 
     // 退室
     location.href = '/';
