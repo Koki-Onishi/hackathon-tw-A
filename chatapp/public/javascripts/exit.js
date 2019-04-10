@@ -5,8 +5,7 @@ function exit() {
     // ユーザ名取得
     const userName = $("#userName").val();
 
-    // const data = userName
-    const data = 'オレ'
+    const data = userName
 
     // 退室メッセージイベントを送信する
     socket.emit('sendExitEvent', data);
