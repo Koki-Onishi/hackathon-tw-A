@@ -1,15 +1,17 @@
 'use strict';
 
-const socket = io.connect();
+function enter() {
+    // ユーザ名取得
+    const userName = $("#userName").val();
 
-// 自クライアントの接続イベント（enterMyselfEvent）を受信する
-socket.on('enterMyselfEvent', function (data) {
-    // 画面上にメッセージを表示
-    $('#thread').prepend('<p>' + data + '</p>');
-});
+    const data = userName;
 
-// 自クライアント以外の接続イベント（enterOtherEvent）を受信する
-socket.on('enterOtherEvent', function (data) {
-    // 画面上にメッセージを表示
-    $('#thread').prepend('<p>' + data + '</p>');
+    // 入室メッセージイベントを送信する
+    socket.emit('sendEnterEvent', data);
+}
+
+// サーバから受信した入室メッセージを画面上に表示する
+
+socket.on('receiveMessageEvent', function (data) {
+    $('#thread').prepend('<p>' + data + 'さんが入室しました。' + '</p>');
 });
