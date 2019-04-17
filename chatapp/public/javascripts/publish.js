@@ -7,6 +7,11 @@ function publish() {
     // 入力されたメッセージを取得
     const message = $('.room-message_textarea').val();
 
+    if (!message.match(/\S/g) || message == '') {
+        alert('何か入力してください。');
+        return false;
+    }
+
     const data = { 'userName': userName, 'message': message }
 
     // 投稿内容を送信

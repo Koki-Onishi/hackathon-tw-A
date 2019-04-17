@@ -7,6 +7,11 @@ function memo() {
     // 入力されたメッセージを取得
     const message = $('.room-message_textarea').val();
 
+    if (!message.match(/\S/g) || message == '') {
+        alert('何か入力してください。');
+        return false;
+    }
+
     // メモの内容を表示
     $('#thread').prepend('<p>' + userName + 'さんのメモ: ' + message + '</p>');
 
