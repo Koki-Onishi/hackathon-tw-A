@@ -7,11 +7,6 @@ $('#toukou').click(function publish() {
     // 入力されたメッセージを取得
     const message = $('.room-message_textarea').val();
 
-    if (!message.match(/\S/g) || message == '') {
-        alert('何か入力してください。');
-        return false;
-    }
-
     const data = { 'userName': userName, 'message': message }
 
 
@@ -20,18 +15,21 @@ $('#toukou').click(function publish() {
 
     socket.emit('sendMessageEvent', data);
 
-    return false;
+     return false;
 });
 
 $('#message').keypress(function(code){
-			if(code.keyCode == 13){
-				alert('enter');
+  if(!event.shiftKey){
+			if(code.keyCode === 13){
+				//alert('enter');
 				$("#toukou").click();
 				//alert('enter')
+         return false;
 			}
-		});
+    }
+	});
 
 // サーバから受信した投稿メッセージを画面上に表示する 改行も
 socket.on('receiveMessageEvent', function (data) {
-    $('#thread').prepend('<p>' + data.userName + 'さん: ' + data.message + '</p>');
+    $('#thread').prepend('<pre>' + data.userName + 'さん: ' + data.message  + '</pre>');
 });

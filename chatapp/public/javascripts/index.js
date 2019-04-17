@@ -11,7 +11,7 @@ $('#mybutton').click(function enter() {
 			alert(userName);
 	    // ユーザ名が未入力でないかチェックする
 			if(userName !== ''){
-				alert('ようこそ');
+				alert('ようこそ4');
 				$('form').submit();
 			}else{
 				alert('文字を入力してください');
