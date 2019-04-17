@@ -7,7 +7,7 @@ module.exports = function (socket, io) {
             return ;
         }
 
-        console.log('クライアントの入力値：' + data.userName + ': ' + data.message);
+        console.log('クライアントの入力値：' + data.userName + data.message);
 
         // 全クライアントが受信するメッセージ表示イベント（receiveMessageEvent）を送信する
         io.sockets.emit('receiveMessageEvent', data);

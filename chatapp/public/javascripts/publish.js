@@ -31,5 +31,5 @@ $('#message').keypress(function(code){
 
 // サーバから受信した投稿メッセージを画面上に表示する 改行も
 socket.on('receiveMessageEvent', function (data) {
-    $('#thread').prepend('<pre>' + data.userName + 'さん: ' + data.message  + '</pre>');
+    $('#thread').prepend(  data.userName + 'さん↓' +'<pre>'+ data.message +'</pre>'  );
 });
