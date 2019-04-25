@@ -5,8 +5,11 @@
     <div class="row">
         <form method="post" action="/">
             <div class="room-login_user">
-                ログインユーザ：{{userName}}さん
+                <p>ログインID：{{userName}}さん</p>
                 <input id="userName" type="hidden" value={{userName}}>
+                ログイン中のユーザー
+                <div align="left" id="other_user" value={{other_user}}>
+                </div>
             </div>
             <div class="room-message">
                 <textarea id="message" rows="4" class="room-message_textarea" placeholder="投稿文を入力してください"></textarea>
@@ -14,17 +17,23 @@
             <div class="room-submit">
                 <input type="button" id="toukou" value="投稿" class="common-button room-publish_button" onclick="publish();">
                 <input id="lastuser" type="hidden" value='aadss'>
+                <input id="myname" type="hidden" value='myname'>
                 <input type="button" value="メモ" class="common-button room-memo_button" onclick="memo();">
+                <input type="button" id="torikesi" value="取り消し" class="common-button torikesi_button" onclick="torikesi();">
+                <input type="button" id="thred-empty" value="スレッドを全消し" class="common-button thred-empty_button" onclick="thred-empty();">
+
             </div>
             <div class="room-sort">
 	                <input type="button" value="並び順を逆にする" class="common-button room-reverse_thread_button" onclick="reverse_thread();">
 	            </div>
+
             <div class="room-thread">
-                <div id="thread"></div>
+                <div　 id="thread"　　class='thread-message'></div>
 
             </div>
             <div class="room-exit">
                 <input type="button" value="退室する" class="common-button room-exit_button" onclick="exit();">
+
             </div>
         </form>
     </div>

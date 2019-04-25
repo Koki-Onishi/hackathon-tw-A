@@ -13,7 +13,7 @@ function memo() {
     }
 
     // メモの内容を表示
-    $('#thread').prepend('<p>' + userName + 'さんのメモ: ' + message + '</p>');
+    $('#thread').prepend('<pre>' + userName + 'さんのメモ: ' + message + '</pre>');
 
     return false;
 }
