@@ -1,41 +1,44 @@
 <div class="container">
+    <div class="row" style="margin-top: 50px;">
+    <div class="col-md-8 offset-md-2">
     <div class="row">
         <h1>Node Chat チャットルーム</h1>
     </div>
     <div class="row">
-        <form method="post" action="/">
-            <div class="room-login_user">
+        <form method="post" action="/" style="width: 100%;">
+            <div class="form-group room-login_user">
                 <p>ログインID：{{userName}}さん</p>
                 <input id="userName" type="hidden" value={{userName}}>
                 ログイン中のユーザー
                 <div align="left" id="other_user" value={{other_user}}>
                 </div>
             </div>
-            <div class="room-message">
-                <textarea id="message" rows="4" class="room-message_textarea" placeholder="投稿文を入力してください"></textarea>
+            <div class="form-group room-message">
+                <textarea id="message" rows="4" class="form-control room-message_textarea" placeholder="投稿文を入力してください" style="width: 100%;"></textarea>
             </div>
-            <div class="room-submit">
-                <input type="button" id="toukou" value="投稿" class="common-button room-publish_button" onclick="publish();">
+            <div class="form-group room-submit">
+                <input type="button" id="toukou" value="投稿" class="btn btn-block btn-primary common-button room-publish_button" onclick="publish();"style="margin-bottom: 5px;">
                 <input id="lastuser" type="hidden" value='aadss'>
                 <input id="myname" type="hidden" value='myname'>
-                <input type="button" value="メモ" class="common-button room-memo_button" onclick="memo();">
-                <input type="button" id="torikesi" value="取り消し" class="common-button torikesi_button" onclick="torikesi();">
-                <input type="button" id="thred-empty" value="スレッドを全消し" class="common-button thred-empty_button" onclick="thred-empty();">
+                <input type="button" value="メモ" class="btn btn-block btn-secondary common-button room-memo_button" onclick="memo();">
+                <input type="button" id="torikesi" value="取り消し" class="btn btn-block btn-secondary common-button torikesi_button" onclick="torikesi();">
+                <input type="button" id="thred-empty" value="スレッドを全消し" class="btn btn-block btn-warning common-button thred-empty_button" onclick="thred-empty();">
 
             </div>
-            <div class="room-sort">
-	                <input type="button" value="並び順を逆にする" class="common-button room-reverse_thread_button" onclick="reverse_thread();">
+            <div class="form-group room-sort">
+	                <input type="button" value="並び順を逆にする" class="btn btn-block btn-info common-button room-reverse_thread_button" onclick="reverse_thread();">
 	            </div>
 
-            <div class="room-thread">
+            <div class="form-group room-thread">
                 <div　 id="thread"　　class='thread-message'></div>
 
-            </div>
-            <div class="room-exit">
-                <input type="button" value="退室する" class="common-button room-exit_button" onclick="exit();">
+            <div class="form-group room-exit">
+                <input type="button" value="退室する" class="btn btn-block btn-dark common-button room-exit_button" onclick="exit();">
 
             </div>
         </form>
+    </div>
+    </div>
     </div>
 </div>
 

@@ -1,17 +1,24 @@
 <div class="container">
     <div class="row">
-        <h1>Node Chat サンプル</h1>
+    <div class="col-md-8 offset-md-2">
+    <div class="card align-items-center" style="margin-top: 50px;">
+        <div class="card-body">
+            <div class="row ">
+                <h1>チャットアプリ</h1>
+            </div>
+            <div class="row">
+                <form method="post" action="/room" style="width: 100%;">
+                    <div class="form-group index-user_name">
+                        <input type="text" placeholder="ユーザ名" id="userName" name="userName" class="form-control index-user_name_text" onkeypress="enter(event.keyCode);" / style="width: 100%;">
+                    </div>
+                    <div class="form-group index-enter">
+                        <input type="button" id="mybutton" value="入室する" class="btn btn-block btn-primary common-button index-enter_button" onclick="enter();">
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="row">
-        <form method="post" action="/room">
-            <div class="index-user_name">
-                ユーザ名
-                <input type="text" id="userName" name="userName" class="index-user_name_text">
-            </div>
-            <div class="index-enter">
-                <input type="button" id="mybutton" value="入室する" class="common-button index-enter_button" onclick="enter();">
-            </div>
-        </form>
+    </div>
     </div>
 </div>
 
