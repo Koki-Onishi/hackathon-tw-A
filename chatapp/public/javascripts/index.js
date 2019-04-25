@@ -12,7 +12,7 @@ $('#mybutton').click(function enter() {
 			//user_all.push(userName);
 	    // ユーザ名が未入力でないかチェックする
 			if(userName.match(/\S/g)){
-				alert('ようこそ6');
+				alert('ようこそ');
 				$('form').submit();
 			}else{
 				alert('文字を入力してください');
